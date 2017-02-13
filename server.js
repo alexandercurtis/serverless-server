@@ -15,7 +15,7 @@ let configFile = 'serverless.yml';
 let path = '';
 if (!fs.existsSync(path)) {
   if (!args.directory) {
-    console.log('Please specify a directory containing serverless.yml:\n' + process.argv[0] + ' -d [directory]');
+    console.log('Please specify a directory containing serverless.yml:\n' + process.argv[0] + ' ' + process.argv[1] + ' -d [directory]');
     process.exit(1);
   } else {
     path = args.directory;
