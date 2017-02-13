@@ -1,0 +1,17 @@
+{
+  "name": "serverless-server",
+  "version": "1.0.0",
+  "description": "Reads a serverless.yml file and starts an HTTP server that invokes Lambdas according to the requested path.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Curtis",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "http": "0.0.0",
+    "js-yaml": "^3.8.1",
+    "url": "^0.11.0"
+  }
+}
