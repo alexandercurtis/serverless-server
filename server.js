@@ -89,9 +89,11 @@ var server = http.createServer(function (request, response) {
         response.writeHead(500, {"Content-Type": "text/plain"});
         response.end("Internal Server Error.\n");
       } else {
-        response.writeHead(200, {"Content-Type": "text/plain"});
-        console.log(data);
-        response.end(JSON.stringify(data) + "\n");
+        data.headers['Content-Type'] = 'application/json';
+        data.headers['Content-Length'] = data.body.length;
+        response.writeHead(data.statusCode, data.headers);
+        console.log(data.body);
+        response.end(data.body + "\n");
       }
     };
     route.handlerFn[route.handler](event, context, callback);
