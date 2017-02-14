@@ -83,7 +83,7 @@ var server = http.createServer(function (request, response) {
     const event = {
       queryStringParameters: queryStringParameters
     };
-    const context = {};
+    const context = {local: true};
     const callback = function (err, data) {
       if (err) {
         response.writeHead(500, {"Content-Type": "text/plain"});
